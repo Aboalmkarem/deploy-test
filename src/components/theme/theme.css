@@ -1,0 +1,59 @@
+:root {
+    --main: #ffffffd0;
+    --text: #000000d1;
+}
+
+[data-theme="dark"] {
+    --main: #282c34;
+    --text: #ffffffd7;
+}
+
+.theme {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle-icons {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.toggle-icons::before {
+    content: '';
+    height: 2rem;
+    width: 4.5rem;
+    border-radius: 1rem;
+    background-color: var(--text);
+    margin-right: .5rem;
+    position: absolute;
+    left: 0;
+}
+
+.toggle-icons::after {
+    content: '';
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    background-color: var(--main);
+    position: absolute;
+    left: .2rem;
+    top: .1rem;
+    transition: transform .15s ease-in-out;
+}
+
+.toggle:checked ~ .toggle-icons::after {
+    transform: translateX(120%);
+}
+
+.sun, .moon {
+    font-size: 1.5rem;
+    padding: .2rem .4rem;
+
+}
+
